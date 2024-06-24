@@ -1,0 +1,28 @@
+This is a compiled rhio binary which normally works with 2019 rhoban repo.
+It needs specific libs located in relative /libs folder (patched with "sudo chrpath -r 'libs' rhio")
+
+To install:
+
+1. Place it in $HOME directory
+
+2. Download libncurses
+
+	sudo apt install libncurses5
+
+To launch robot with number X:
+
+CAUTION: You need to be in humanoid network!
+
+1. Run robot server:
+
+	./run 192.168.2.X
+
+2. Exit from RhIO Server output with "ctrl+c" or open another terminal "ctrl+alt+t"
+
+3. Specify the path, where to find libs
+
+	export LD_LIBRARY_PATH=$HOME/rhio_binaries/libs
+
+4. Run RhIO with robot number X:
+
+	./rhio 192.168.12.X
